@@ -1,6 +1,8 @@
-
 public class Lab1 {
     public static void main(String[] args) {
+        // Point3d p1 = new Point3d(Double.parseDouble(args[0]), Double.parseDouble(args[1]), Double.parseDouble(args[2]));
+        // Point3d p2 = new Point3d(Double.parseDouble(args[3]), Double.parseDouble(args[4]), Double.parseDouble(args[5]));
+        // Point3d p3 = new Point3d(Double.parseDouble(args[6]), Double.parseDouble(args[7]), Double.parseDouble(args[8]));
         // First triangle
         Point3d p1 = new Point3d(10, 10, 10);
         Point3d p2 = new Point3d(11, 12, 13);
@@ -32,10 +34,10 @@ public class Lab1 {
         c = Point3d.distanceTo(point1, point3);
 
         if (Point3d.compare(point1, point2, point3)) {
-            System.out.println("Error");
-            return 0.0;
+            System.out.println("Error"); // если есть одинаковые точки вывод ошибки
+            return 0.0; // возврат
         } else {
-            p = (a + b + c) / 2;
+            p = (a + b + c) / 2; // расчет полусуммы
             s = Math.sqrt(p * (p - a) * (p - b) * (p - c)); // формула герона
             String result = String.format("%.2f", s);
             return Double.parseDouble(result.replace(",", ".")); // возврат s(площади)
